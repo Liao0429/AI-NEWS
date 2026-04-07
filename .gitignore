@@ -1,0 +1,53 @@
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# Data
+# 保留必要的数据文件
+!data/data/raw_news_data/bitcoin_news.json
+!data/data/raw_news_data/traffic_news.json
+!data/data/paired_time_series_news_training_data/
+
+# 忽略其他数据文件
+data/cache/
+data/real/
+*.csv
+*.xlsx
+*.db
+
+# Results
+# 保留results目录中的文件
+!results/
+
+# Experiments
+experiments/results/
