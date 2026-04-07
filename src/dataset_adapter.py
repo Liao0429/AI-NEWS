@@ -35,8 +35,9 @@ class DataProcessor:
         if os.path.exists(cache_file):
             print(f'✓ 从缓存加载 {ticker} 价格数据')
             price_data = pd.read_csv(cache_file, index_col=0, parse_dates=True)
-            # 转换为UTC时区
-            price_data.index = price_data.index.tz_localize('UTC')
+            # 检查是否已经是时区感知的，如果不是则转换为UTC
+            if price_data.index.tz is None:
+                price_data.index = price_data.index.tz_localize('UTC')
             return price_data
         
         # 下载数据
@@ -46,8 +47,9 @@ class DataProcessor:
         # 数据质量控制
         price_data = self._process_price_data(price_data)
         
-        # 转换为UTC时区
-        price_data.index = price_data.index.tz_localize('UTC')
+        # 检查是否已经是时区感知的，如果不是则转换为UTC
+        if price_data.index.tz is None:
+            price_data.index = price_data.index.tz_localize('UTC')
         
         # 保存到缓存
         price_data.to_csv(cache_file)
@@ -244,7 +246,12 @@ class DataProcessor:
                     date_obj = datetime.strptime(pub_time, '%Y-%m-%d %H:%M:%S')
                     date_str = date_obj.strftime('%Y-%m-%d')
                 except (ValueError, TypeError):
-                    continue
+                    # 尝试其他日期格式
+                    try:
+                        date_obj = datetime.strptime(pub_time, '%Y-%m-%d')
+                        date_str = date_obj.strftime('%Y-%m-%d')
+                    except:
+                        continue
             else:
                 continue
             
@@ -259,10 +266,17 @@ class DataProcessor:
         df_news = pd.DataFrame(processed_news)
         df_news = df_news.sort_values('date').reset_index(drop=True)
         
-        # 采样
+        # 采样策略优化：优先保留更多样本
         if len(df_news) > sample_size:
-            sample_step = len(df_news) // sample_size
-            selected_indices = range(0, len(df_news), sample_step)[:sample_size]
+            # 计算采样步长，确保至少保留 sample_size 个样本
+            sample_step = max(1, len(df_news) // sample_size)
+            selected_indices = range(0, len(df_news), sample_step)
+            # 确保我们有足够的样本
+            while len(selected_indices) < sample_size and sample_step > 1:
+                sample_step -= 1
+                selected_indices = range(0, len(df_news), sample_step)
+            # 截取到 sample_size 个样本
+            selected_indices = list(selected_indices)[:sample_size]
             df_news = df_news.iloc[selected_indices].copy()
         
         print(f'✓ 使用 {len(df_news)} 条新闻')
@@ -275,8 +289,9 @@ class DataProcessor:
         min_date = df_news['date'].min()
         max_date = df_news['date'].max()
         
-        start_date = (datetime.strptime(min_date, '%Y-%m-%d') - timedelta(days=30)).strftime('%Y-%m-%d')
-        end_date = (datetime.strptime(max_date, '%Y-%m-%d') + timedelta(days=30)).strftime('%Y-%m-%d')
+        # 扩大日期范围，确保有足够的价格数据
+        start_date = (datetime.strptime(min_date, '%Y-%m-%d') - timedelta(days=60)).strftime('%Y-%m-%d')
+        end_date = (datetime.strptime(max_date, '%Y-%m-%d') + timedelta(days=60)).strftime('%Y-%m-%d')
         
         price_data = self.load_price_data(ticker, start_date, end_date)
         
@@ -284,6 +299,22 @@ class DataProcessor:
         
         # 转换为交易格式
         df_trading = self.convert_to_trading_format(df_news, price_data)
+        
+        # 检查样本数量，如果不足，尝试调整采样策略
+        if len(df_trading) < sample_size * 0.8:
+            print(f'警告: 转换后只有 {len(df_trading)} 条样本，尝试调整采样策略...')
+            # 重新加载新闻数据，不进行采样，保留所有新闻
+            df_news_full = pd.DataFrame(processed_news)
+            df_news_full = df_news_full.sort_values('date').reset_index(drop=True)
+            print(f'✓ 尝试使用全部 {len(df_news_full)} 条新闻')
+            df_trading_full = self.convert_to_trading_format(df_news_full, price_data)
+            print(f'✓ 转换后得到 {len(df_trading_full)} 条样本')
+            
+            # 如果新的转换结果更好，使用它
+            if len(df_trading_full) > len(df_trading):
+                df_trading = df_trading_full
+        
+        print(f'✓ 最终保留 {len(df_trading)} 条有效样本')
         
         return df_trading
     

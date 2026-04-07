@@ -54,9 +54,9 @@ class MeanReversionStrategy(BaseStrategy):
         
         for idx, row in aligned_df.iterrows():
             # 对于均值回归策略，我们需要计算移动平均
-            if idx >= self.time_window - 1:
-                # 计算过去time_window天的移动平均
-                window_prices = prices[max(0, idx - self.time_window + 1):idx + 1]
+            if idx >= self.time_window:
+                # 计算过去time_window天的移动平均（只使用T-1及以前的数据）
+                window_prices = prices[max(0, idx - self.time_window):idx]
                 moving_avg = np.mean(window_prices)
                 
                 # 价格高于均值则做空，低于则做多

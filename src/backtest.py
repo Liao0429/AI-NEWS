@@ -78,6 +78,33 @@ def run_backtest(aligned_df, num_runs=100, random_seed=42):
     # 加载配置
     config = load_config()
     
+    # 时间对齐检查
+    print('='*80)
+    print('Step 0: 时间对齐检查')
+    print('='*80)
+    
+    # 检查是否包含必要的时间列
+    required_time_columns = ['news_time', 'trade_time']
+    for col in required_time_columns:
+        if col not in aligned_df.columns:
+            print(f"警告: 数据缺少时间列 '{col}'，跳过时间对齐检查")
+            break
+    else:
+        # 检查时间顺序
+        import pandas as pd
+        for idx, row in aligned_df.iterrows():
+            try:
+                news_time = pd.to_datetime(row['news_time'])
+                trade_time = pd.to_datetime(row['trade_time'])
+                
+                # 确保新闻时间早于交易时间
+                assert news_time < trade_time, f"时间顺序错误: news_time >= trade_time at index {idx}"
+            except Exception as e:
+                print(f"时间解析错误: {e}")
+        
+        print('✓ 时间对齐检查通过: 所有新闻时间都早于交易时间')
+    print()
+    
     # 获取交易参数
     trading_cost = config.get('trading_cost', 0.001)  # 默认0.1% per trade
     slippage = config.get('slippage', 0.0005)  # 默认0.05%

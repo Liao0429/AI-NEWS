@@ -33,7 +33,20 @@ tmp/
 temp/
 
 # Data
+# 保留必要的数据文件
+!data/data/raw_news_data/bitcoin_news.json
+!data/data/raw_news_data/traffic_news.json
+!data/data/paired_time_series_news_training_data/
+
+# 忽略其他数据文件
+data/cache/
+data/real/
 *.csv
 *.xlsx
-*.json
 *.db
+
+# Results
+results/
+
+# Experiments
+experiments/results/

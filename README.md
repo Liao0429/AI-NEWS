@@ -54,14 +54,19 @@ LLM-news/
 │   └── EXPERIMENTAL_PROTOCOL.md     # Experimental protocol
 ├── data/                              # Data directory
 │   ├── cache/                        # Cached price data
-│   └── From_News_to_Forecast/       # NeurIPS 2024 data
+│   └── data/                         # From_News_to_Forecast data
 ├── results/                           # Results directory
 │   ├── tables/                       # Result tables
 │   └── figures/                      # Visualization figures
 ├── config/                            # Configuration files
+│   ├── config.yaml                   # Main configuration
 │   └── prompts.yaml                  # Prompt templates
+├── main_runner.py                     # Unified experiment runner
+├── run_all_benchmarks.sh             # Benchmark script
 ├── requirements.txt                   # Python dependencies
 ├── .env.example                      # Environment variables template
+├── .gitignore                        # Git ignore file
+├── LICENSE                           # MIT License
 └── README.md                         # This file
 ```
 
@@ -76,14 +81,17 @@ cp .env.example .env
 # Edit .env if you want to use real LLM API
 
 # Step 3: Run all experiments
-python scripts/reproduce_all.py
+python main_runner.py --all-assets
 ```
 
 ### One-Click Reproduction
 
 ```bash
 # Reproduce all experiments with one command
-python scripts/reproduce_all.py
+python main_runner.py --all-assets
+
+# Run benchmarks
+bash run_all_benchmarks.sh
 
 # Windows users
 scripts\reproduce_all.bat
@@ -152,6 +160,80 @@ scripts\reproduce_all.bat
 2. Only simple strategies implemented
 3. Transaction costs not optimized for extreme scenarios
 
+### Installation
+
+#### Prerequisites
+- Python 3.8 or higher
+- pip package manager
+
+#### Step-by-Step Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Liao0429/AI-NEWS.git
+   cd AI-NEWS
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Configure environment**
+   ```bash
+   cp .env.example .env
+   # Edit .env file to add your LLM API keys if needed
+   ```
+
+### Usage
+
+#### Running Experiments
+
+1. **Run all assets**
+   ```bash
+   python main_runner.py --all-assets
+   ```
+
+2. **Run single asset**
+   ```bash
+   python main_runner.py --asset BTC-USD
+   ```
+
+3. **Run benchmarks**
+   ```bash
+   bash run_all_benchmarks.sh
+   ```
+
+#### Configuration
+
+The main configuration file is `config/config.yaml`. You can adjust the following parameters:
+
+- `random_seed`: Random seed for reproducibility
+- `num_runs`: Number of backtest runs
+- `asset`: Default asset to test
+- `trading_cost`: Transaction cost per trade (default: 0.1%)
+- `slippage`: Slippage per trade (default: 0.05%)
+
+### Contributing
+
+We welcome contributions to this project! Here's how you can help:
+
+1. **Fork the repository**
+2. **Create a new branch** for your feature or bug fix
+3. **Make your changes** and ensure they follow the project's code style
+4. **Run tests** to ensure your changes don't break existing functionality
+5. **Submit a pull request** with a clear description of your changes
+
+#### Code Style
+- Follow PEP 8 guidelines
+- Use descriptive variable and function names
+- Add docstrings for all functions and classes
+- Write clear, concise comments where necessary
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ### Citation
 
 If you use this code in your research, please cite:
@@ -161,7 +243,7 @@ If you use this code in your research, please cite:
   title={LLM News Analysis Experiment System},
   author={LLM-News Team},
   year={2024},
-  howpublished={\\url{https://github.com/your-repo/LLM-news}}
+  howpublished={\url{https://github.com/Liao0429/AI-NEWS}}
 }
 ```
 
@@ -218,14 +300,19 @@ LLM-news/
 │   └── EXPERIMENTAL_PROTOCOL.md     # 实验协议
 ├── data/                              # 数据目录
 │   ├── cache/                        # 缓存价格数据
-│   └── From_News_to_Forecast/       # NeurIPS 2024数据
+│   └── data/                         # From_News_to_Forecast数据
 ├── results/                           # 结果目录
 │   ├── tables/                       # 结果表格
 │   └── figures/                      # 可视化图表
 ├── config/                            # 配置文件
+│   ├── config.yaml                   # 主配置文件
 │   └── prompts.yaml                  # Prompt模板
+├── main_runner.py                     # 统一实验运行器
+├── run_all_benchmarks.sh             # 基准测试脚本
 ├── requirements.txt                   # Python依赖
 ├── .env.example                      # 环境变量模板
+├── .gitignore                        # Git忽略文件
+├── LICENSE                           # MIT许可证
 └── README.md                         # 本文件
 ```
 
@@ -240,14 +327,17 @@ cp .env.example .env
 # 如果要使用真实LLM API，请编辑.env文件
 
 # 步骤3：运行所有实验
-python scripts/reproduce_all.py
+python main_runner.py --all-assets
 ```
 
 ### 一键复现
 
 ```bash
 # 一条命令复现所有实验
-python scripts/reproduce_all.py
+python main_runner.py --all-assets
+
+# 运行基准测试
+bash run_all_benchmarks.sh
 
 # Windows用户
 scripts\reproduce_all.bat
@@ -316,6 +406,80 @@ scripts\reproduce_all.bat
 2. 只实现了简单策略
 3. 交易成本未针对极端情况进行优化
 
+### 安装
+
+#### 前置条件
+- Python 3.8或更高版本
+- pip包管理器
+
+#### 安装步骤
+
+1. **克隆仓库**
+   ```bash
+   git clone https://github.com/Liao0429/AI-NEWS.git
+   cd AI-NEWS
+   ```
+
+2. **安装依赖**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **配置环境**
+   ```bash
+   cp .env.example .env
+   # 编辑.env文件添加LLM API密钥（如果需要）
+   ```
+
+### 使用方法
+
+#### 运行实验
+
+1. **运行所有资产**
+   ```bash
+   python main_runner.py --all-assets
+   ```
+
+2. **运行单个资产**
+   ```bash
+   python main_runner.py --asset BTC-USD
+   ```
+
+3. **运行基准测试**
+   ```bash
+   bash run_all_benchmarks.sh
+   ```
+
+#### 配置
+
+主要配置文件是 `config/config.yaml`，您可以调整以下参数：
+
+- `random_seed`：用于可复现性的随机种子
+- `num_runs`：回测运行次数
+- `asset`：默认测试资产
+- `trading_cost`：每笔交易的交易成本（默认：0.1%）
+- `slippage`：每笔交易的滑点（默认：0.05%）
+
+### 贡献
+
+我们欢迎对本项目的贡献！以下是您可以帮助的方式：
+
+1. **Fork仓库**
+2. **创建新分支**用于您的功能或错误修复
+3. **进行更改**并确保它们遵循项目的代码风格
+4. **运行测试**确保您的更改不会破坏现有功能
+5. **提交拉取请求**，清晰描述您的更改
+
+#### 代码风格
+- 遵循PEP 8 guidelines
+- 使用描述性变量和函数名称
+- 为所有函数和类添加文档字符串
+- 在必要时编写清晰、简洁的注释
+
+### 许可证
+
+本项目采用MIT许可证 - 详见 [LICENSE](LICENSE) 文件。
+
 ### 引用
 
 如果您在研究中使用本代码，请引用：
@@ -325,6 +489,6 @@ scripts\reproduce_all.bat
   title={LLM新闻分析实验系统},
   author={LLM-News团队},
   year={2024},
-  howpublished={\\url{https://github.com/your-repo/LLM-news}}
+  howpublished={\url{https://github.com/Liao0429/AI-NEWS}}
 }
 ```
