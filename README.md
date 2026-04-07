@@ -269,6 +269,7 @@ If you use this code in your research, please cite:
 - **综合分析**: 错误分析、市场条件分析、敏感性分析
 - **Publication-ready可视化**: 策略对比图表、累积收益曲线、热力图
 - **完整可复现性**: 一键复现，固定随机种子和详细日志
+- **Pure LLM Mode**: 所有实验均在Pure LLM Mode下运行，排除了任何启发式规则干扰
 
 ### 项目结构
 

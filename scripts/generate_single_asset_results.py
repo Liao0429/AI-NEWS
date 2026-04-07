@@ -52,7 +52,31 @@ def run_single_asset_experiment(ticker, sample_size=150):
         'MeanReversion': MeanReversionStrategy()
     }
 
-    # 运行每个策略
+    # 运行每个策略并保存详细结果
+    detailed_results = []
+    for name, strategy in strategies.items():
+        if name in ['Momentum', 'MeanReversion']:
+            signals, returns = strategy.run(df)
+        else:
+            signals = df['news_text'].apply(strategy.generate_signal).tolist()
+            pct_returns = df.apply(
+                lambda row: (row['future_price'] - row['trade_price']) / row['trade_price'] if row['trade_price'] != 0 else 0,
+                axis=1
+            ).tolist()
+            returns = [s * r for s, r in zip(signals, pct_returns)]
+
+        # 保存详细结果（包含时间戳）
+        for i, (signal, ret, news_time, trade_time) in enumerate(zip(signals, returns, df['news_time'], df['trade_time'])):
+            detailed_results.append({
+                'Ticker': ticker,
+                'Strategy': name,
+                'News_Timestamp': news_time,
+                'Trade_Timestamp': trade_time,
+                'Signal': signal,
+                'Return': ret
+            })
+
+    # 计算策略统计信息
     results = []
     for name, strategy in strategies.items():
         if name in ['Momentum', 'MeanReversion']:
@@ -69,6 +93,12 @@ def run_single_asset_experiment(ticker, sample_size=150):
         stats['Strategy'] = name
         stats['Ticker'] = ticker
         results.append(stats)
+
+    # 保存详细结果到CSV
+    os.makedirs('results/detailed', exist_ok=True)
+    detailed_path = f'results/detailed/{ticker}_detailed_results.csv'
+    pd.DataFrame(detailed_results).to_csv(detailed_path, index=False)
+    print(f"✓ 详细结果已保存到: {detailed_path}")
 
     return pd.DataFrame(results)
 

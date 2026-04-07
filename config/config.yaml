@@ -2,6 +2,12 @@
 random_seed: 42
 num_runs: 100
 
+# Experiment Settings
+experiment_setting:
+  sample_size: 150
+  test_assets: ["AAPL", "BTC-USD", "GOOGL", "MSFT"]
+  transaction_cost: 0.001  # 0.1% per trade
+
 # Asset Configuration
 asset: AAPL
 start_date: 2023-01-01
@@ -9,6 +15,20 @@ end_date: 2024-12-31
 
 # Strategy Configuration
 noise_rate: 0.02
+
+# Strategies
+strategies:
+  llm:
+    model: "kimi-k2"
+    pure_mode: true  # 强制关闭fallback
+    prompt_version: "PROMPT_V1"
+    use_cache: true
+  hash:
+    seed: 42
+  momentum:
+    time_window: 5
+  mean_reversion:
+    time_window: 5
 
 # Trading Configuration
 trading_cost: 0.001  # 0.1% per trade

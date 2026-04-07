@@ -38,6 +38,28 @@ class ExperimentRegistry:
             return {
                 'random_seed': 42,
                 'num_runs': 100,
+                'experiment_setting': {
+                    'sample_size': 150,
+                    'test_assets': ['AAPL', 'MSFT', 'GOOGL', 'BTC-USD'],
+                    'transaction_cost': 0.001
+                },
+                'strategies': {
+                    'llm': {
+                        'model': 'kimi-k2',
+                        'pure_mode': True,
+                        'prompt_version': 'PROMPT_V1',
+                        'use_cache': True
+                    },
+                    'hash': {
+                        'seed': 42
+                    },
+                    'momentum': {
+                        'time_window': 5
+                    },
+                    'mean_reversion': {
+                        'time_window': 5
+                    }
+                },
                 'asset': 'AAPL',
                 'start_date': '2023-01-01',
                 'end_date': '2024-12-31',
@@ -68,9 +90,12 @@ class ExperimentRegistry:
     
     def get_strategies(self):
         """获取所有策略实例"""
+        # 获取策略配置
+        strategy_configs = self.config.get('strategies', {})
+        
         strategies = {
             'Keyword': KeywordStrategy(random_seed=self.config['random_seed']),
-            'Hash': HashStrategy(random_seed=self.config['random_seed']),
+            'Hash': HashStrategy(random_seed=strategy_configs.get('hash', {}).get('seed', self.config['random_seed'])),
             'Momentum': MomentumStrategy(random_seed=self.config['random_seed']),
             'MeanReversion': MeanReversionStrategy(random_seed=self.config['random_seed']),
             'Random': RandomStrategy(random_seed=self.config['random_seed'])
@@ -78,7 +103,12 @@ class ExperimentRegistry:
         
         # 添加LLM策略
         try:
-            llm = get_reproducible_llm()
+            llm_config = strategy_configs.get('llm', {})
+            llm = get_reproducible_llm(
+                prompt_version=llm_config.get('prompt_version', 'PROMPT_V1'),
+                model=llm_config.get('model', 'kimi-k2'),
+                use_cache=llm_config.get('use_cache', True)
+            )
             strategies['LLM'] = llm
             logging.info("LLM策略初始化成功")
         except Exception as e:
@@ -89,12 +119,13 @@ class ExperimentRegistry:
     def load_data(self, asset=None):
         """加载数据"""
         asset = asset or self.config['asset']
-        logging.info(f"加载资产数据: {asset}")
+        sample_size = self.config.get('experiment_setting', {}).get('sample_size', 150)
+        logging.info(f"加载资产数据: {asset}, 样本大小: {sample_size}")
         
         try:
             df_trading = self.processor.load_from_news_to_forecast_data(
                 ticker=asset,
-                sample_size=150  # 尽可能保留150条样本
+                sample_size=sample_size  # 使用配置文件中的样本大小
             )
             logging.info(f"数据加载成功，共 {len(df_trading)} 条记录")
             return df_trading
@@ -133,7 +164,8 @@ class ExperimentRegistry:
     
     def run_all_assets(self, assets=None):
         """运行所有资产的实验"""
-        assets = assets or ['AAPL', 'MSFT', 'GOOGL', 'BTC-USD']
+        # 使用配置文件中的测试资产
+        assets = assets or self.config.get('experiment_setting', {}).get('test_assets', ['AAPL', 'MSFT', 'GOOGL', 'BTC-USD'])
         
         all_results = {}
         for asset in assets:

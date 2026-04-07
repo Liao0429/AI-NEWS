@@ -168,27 +168,31 @@ def calculate_stats(returns: List[float]) -> Dict[str, float]:
     mean_return = np.mean(returns)
     std_return = np.std(returns)
     std_return = std_return if std_return > 1e-8 else 1e-8
-    sharpe = mean_return / std_return
+    
+    # 计算年化Sharpe Ratio（假设每日收益率）
+    annualized_sharpe = mean_return / std_return * np.sqrt(252)  # 252个交易日
     win_rate = np.mean([1 if r > 0 else 0 for r in returns]) * 100
     
     # 计算最大回撤
     cumulative = np.cumsum(returns)
     peak = np.maximum.accumulate(cumulative)
-    drawdown = (peak - cumulative) / (peak + 1e-8)  # 避免除零
+    # 确保peak不为0，避免除零错误
+    peak = np.maximum(peak, 1e-8)  # 当peak为0或负数时，使用一个小的正数
+    drawdown = (peak - cumulative) / peak
     max_drawdown = np.max(drawdown) * 100  # 转换为百分比
     
     # 计算卡玛比率
-    calmar_ratio = mean_return / (max_drawdown / 100 + 1e-8) if max_drawdown > 0 else 0.0
+    calmar_ratio = (mean_return * 252) / (max_drawdown / 100 + 1e-8) if max_drawdown > 0 else 0.0  # 年化均值
     
     # 计算索提诺比率
     negative_returns = [r for r in returns if r < 0]
     downside_std = np.std(negative_returns) if negative_returns else 1e-8
-    sortino_ratio = mean_return / downside_std
+    sortino_ratio = mean_return / downside_std * np.sqrt(252)  # 年化索提诺
     
     return {
         'mean': mean_return,
         'std': std_return,
-        'sharpe': sharpe,
+        'sharpe': annualized_sharpe,
         'win_rate': win_rate,
         'max_drawdown': max_drawdown,
         'calmar_ratio': calmar_ratio,

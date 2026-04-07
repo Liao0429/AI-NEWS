@@ -99,10 +99,15 @@ def run_backtest(aligned_df, num_runs=100, random_seed=42):
                 
                 # 确保新闻时间早于交易时间
                 assert news_time < trade_time, f"时间顺序错误: news_time >= trade_time at index {idx}"
+                
+                # 确保新闻时间早于市场开盘时间（candle_open_time）
+                if 'market_open' in row:
+                    market_open = pd.to_datetime(row['market_open'])
+                    assert news_time < market_open, f"时间顺序错误: news_time >= market_open at index {idx}"
             except Exception as e:
                 print(f"时间解析错误: {e}")
         
-        print('✓ 时间对齐检查通过: 所有新闻时间都早于交易时间')
+        print('✓ 时间对齐检查通过: 所有新闻时间都早于交易时间和市场开盘时间')
     print()
     
     # 获取交易参数
@@ -195,6 +200,13 @@ def print_backtest_results(results):
     print("回测结果")
     print("=" * 80)
     
+    # 导入scipy.stats进行t检验
+    try:
+        from scipy import stats
+    except ImportError:
+        print("警告: scipy库未安装，无法计算p-value")
+        stats = None
+    
     # Keyword策略
     keyword_gross = np.mean(results['keyword_gross_returns'])
     keyword_net = np.mean(results['keyword_net_returns'])
@@ -202,6 +214,9 @@ def print_backtest_results(results):
     print(f"  Before cost: {keyword_gross:.4f}")
     print(f"  After cost:  {keyword_net:.4f}")
     print(f"  成本影响:  {keyword_net - keyword_gross:.4f}")
+    if stats:
+        keyword_p_value = stats.ttest_1samp(results['keyword_net_returns'], 0)[1]
+        print(f"  p-value:    {keyword_p_value:.6f}")
     print()
     
     # Hash策略
@@ -211,6 +226,9 @@ def print_backtest_results(results):
     print(f"  Before cost: {hash_gross:.4f}")
     print(f"  After cost:  {hash_net:.4f}")
     print(f"  成本影响:  {hash_net - hash_gross:.4f}")
+    if stats:
+        hash_p_value = stats.ttest_1samp(results['hash_net_returns'], 0)[1]
+        print(f"  p-value:    {hash_p_value:.6f}")
     print()
     
     # Momentum策略
@@ -221,6 +239,9 @@ def print_backtest_results(results):
         print(f"  Before cost: {momentum_gross:.4f}")
         print(f"  After cost:  {momentum_net:.4f}")
         print(f"  成本影响:  {momentum_net - momentum_gross:.4f}")
+        if stats:
+            momentum_p_value = stats.ttest_1samp(results['momentum_net_returns'], 0)[1]
+            print(f"  p-value:    {momentum_p_value:.6f}")
         print()
     
     # MeanReversion策略
@@ -231,6 +252,9 @@ def print_backtest_results(results):
         print(f"  Before cost: {meanreversion_gross:.4f}")
         print(f"  After cost:  {meanreversion_net:.4f}")
         print(f"  成本影响:  {meanreversion_net - meanreversion_gross:.4f}")
+        if stats:
+            meanreversion_p_value = stats.ttest_1samp(results['meanreversion_net_returns'], 0)[1]
+            print(f"  p-value:    {meanreversion_p_value:.6f}")
         print()
     
     print("=" * 80)

@@ -48,8 +48,7 @@ class ReproducibleLLM:
                  prompt_version: str = DEFAULT_PROMPT_VERSION,
                  use_cache: bool = True,
                  cache_file: str = DEFAULT_CACHE_FILE,
-                 prompt_file: str = DEFAULT_PROMPT_FILE,
-                 fallback_to_keyword: bool = False):
+                 prompt_file: str = DEFAULT_PROMPT_FILE):
         """
         初始化可复现LLM模块
         
@@ -61,7 +60,6 @@ class ReproducibleLLM:
             use_cache: 是否使用缓存
             cache_file: 缓存文件路径
             prompt_file: Prompt配置文件路径
-            fallback_to_keyword: API失败时是否fallback到keyword方法
         """
         self.api_key = api_key or os.getenv("KIMI_API_KEY") or os.getenv("OPENAI_API_KEY")
         self.base_url = base_url or os.getenv("KIMI_BASE_URL", "https://apis.iflow.cn/v1")
@@ -70,7 +68,6 @@ class ReproducibleLLM:
         self.use_cache = use_cache
         self.cache_file = cache_file
         self.prompt_file = prompt_file
-        self.fallback_to_keyword = fallback_to_keyword
         
         self.cache = {}
         self.prompts = {}
@@ -85,7 +82,7 @@ class ReproducibleLLM:
             "total_calls": 0,
             "cache_hits": 0,
             "api_calls": 0,
-            "fallback_calls": 0
+            "parse_failures": 0
         }
     
     def _ensure_directories(self):
@@ -195,6 +192,7 @@ News:
                     return json.loads(llm_output[start_idx:end_idx+1])
             except Exception:
                 pass
+            self.stats["parse_failures"] += 1
             raise ValueError("无法解析LLM输出为JSON")
     
     def _keyword_fallback(self, news_text: str) -> Dict:
@@ -238,10 +236,10 @@ News:
             
         Returns:
             {
-                "signal": +1 or -1,
+                "signal": +1, -1, or 0 (neutral),
                 "confidence": float (0~1),
                 "reason": string,
-                "method": "cache" or "llm" or "keyword_fallback",
+                "method": "cache" or "llm" or "neutral",
                 "model_name": string,
                 "prompt_version": string
             }
@@ -296,21 +294,17 @@ News:
             except Exception as e:
                 print(f"  [WARNING] LLM call failed: {e}")
         
-        if result is None and self.fallback_to_keyword:
-            self.stats["fallback_calls"] += 1
-            keyword_result = self._keyword_fallback(news_text)
+        if result is None:
+            # LLM 无法解析，记为 Neutral (0)
             result = {
-                "signal": 1 if keyword_result["prediction"] == "UP" else -1,
-                "confidence": keyword_result["confidence"],
-                "reason": keyword_result["reason"],
-                "method": "keyword_fallback",
+                "signal": 0,
+                "confidence": 0.0,
+                "reason": "LLM 无法解析，记为中性",
+                "method": "neutral",
                 "model_name": self.model,
                 "prompt_version": self.prompt_version
             }
-            method = "keyword_fallback"
-        
-        if result is None:
-            raise ValueError("LLM不可用且fallback被禁用")
+            method = "neutral"
         
         if self.use_cache:
             self.cache[cache_key] = result
@@ -331,6 +325,8 @@ News:
         total = self.stats["total_calls"]
         cache_hits = self.stats["cache_hits"]
         cache_hit_rate = (cache_hits / total * 100) if total > 0 else 0
+        parse_failures = self.stats.get("parse_failures", 0)
+        parse_failure_rate = (parse_failures / total * 100) if total > 0 else 0
         
         print()
         print("="*80)
@@ -339,7 +335,7 @@ News:
         print(f"总调用次数: {total}")
         print(f"缓存命中: {cache_hits} ({cache_hit_rate:.1f}%)")
         print(f"API调用: {self.stats['api_calls']}")
-        print(f"Fallback调用: {self.stats['fallback_calls']}")
+        print(f"解析失败: {parse_failures} ({parse_failure_rate:.1f}%)")
         print(f"模型: {self.model}")
         print(f"Prompt版本: {self.prompt_version}")
         print("="*80)
@@ -363,8 +359,7 @@ def get_reproducible_llm(prompt_version: str = "PROMPT_V1",
     return ReproducibleLLM(
         prompt_version=prompt_version,
         model=model,
-        use_cache=use_cache,
-        fallback_to_keyword=False
+        use_cache=use_cache
     )
 
 
