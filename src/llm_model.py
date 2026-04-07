@@ -49,7 +49,7 @@ class ReproducibleLLM:
                  use_cache: bool = True,
                  cache_file: str = DEFAULT_CACHE_FILE,
                  prompt_file: str = DEFAULT_PROMPT_FILE,
-                 fallback_to_keyword: bool = True):
+                 fallback_to_keyword: bool = False):
         """
         初始化可复现LLM模块
         
@@ -364,7 +364,7 @@ def get_reproducible_llm(prompt_version: str = "PROMPT_V1",
         prompt_version=prompt_version,
         model=model,
         use_cache=use_cache,
-        fallback_to_keyword=True
+        fallback_to_keyword=False
     )
 
 

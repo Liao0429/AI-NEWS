@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 import os
 import json
 import yfinance as yf
+import pytz
 
 
 class DataProcessor:
@@ -13,6 +14,7 @@ class DataProcessor:
         self.base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         self.cache_dir = os.path.join(self.base_dir, 'data', 'cache')
         os.makedirs(self.cache_dir, exist_ok=True)
+        self.utc = pytz.UTC
     
     def load_price_data(self, ticker, start_date, end_date):
         """
@@ -32,7 +34,10 @@ class DataProcessor:
         # 检查缓存是否存在
         if os.path.exists(cache_file):
             print(f'✓ 从缓存加载 {ticker} 价格数据')
-            return pd.read_csv(cache_file, index_col=0, parse_dates=True)
+            price_data = pd.read_csv(cache_file, index_col=0, parse_dates=True)
+            # 转换为UTC时区
+            price_data.index = price_data.index.tz_localize('UTC')
+            return price_data
         
         # 下载数据
         print(f'下载 {ticker} 价格数据...')
@@ -40,6 +45,9 @@ class DataProcessor:
         
         # 数据质量控制
         price_data = self._process_price_data(price_data)
+        
+        # 转换为UTC时区
+        price_data.index = price_data.index.tz_localize('UTC')
         
         # 保存到缓存
         price_data.to_csv(cache_file)
@@ -112,6 +120,8 @@ class DataProcessor:
             
             try:
                 news_datetime = datetime.strptime(news_date_str, '%Y-%m-%d')
+                # 转换为UTC时区
+                news_datetime = self.utc.localize(news_datetime)
             except (ValueError, TypeError):
                 continue
             
@@ -129,13 +139,18 @@ class DataProcessor:
                 check_date = news_datetime + timedelta(days=i)
                 check_date_str = check_date.strftime('%Y-%m-%d')
                 
-                if check_date_str in price_data.index:
+                # 检查日期是否在价格数据中
+                if check_date_str in price_data.index.strftime('%Y-%m-%d'):
                     if trade_date is None:
                         trade_date = check_date_str
-                        trade_time = datetime.strptime(trade_date, '%Y-%m-%d').replace(hour=9, minute=30, second=0)
+                        # 转换为UTC时间
+                        trade_time = self.utc.localize(datetime.strptime(trade_date, '%Y-%m-%d')).replace(hour=9, minute=30, second=0)
+                        # 标注市场开闭时间（UTC时间，美股：9:30-16:00 ET = 13:30-20:00 UTC）
+                        market_open = self.utc.localize(datetime.strptime(trade_date, '%Y-%m-%d')).replace(hour=13, minute=30, second=0)
+                        market_close = self.utc.localize(datetime.strptime(trade_date, '%Y-%m-%d')).replace(hour=20, minute=0, second=0)
                     elif future_date is None:
                         future_date = check_date_str
-                        future_price_time = datetime.strptime(future_date, '%Y-%m-%d').replace(hour=16, minute=0, second=0)
+                        future_price_time = self.utc.localize(datetime.strptime(future_date, '%Y-%m-%d')).replace(hour=16, minute=0, second=0)
                         break
             
             if trade_date and future_date:
@@ -169,15 +184,17 @@ class DataProcessor:
                 price_return = (future_price - trade_price) / trade_price
                 
                 trading_data.append({
-                    'news_time': news_time,
+                    'news_time': news_time.strftime('%Y-%m-%d %H:%M:%S UTC'),
                     'news_date': news_date_str,
                     'news_text': row.get('full_text', row.get('title', '')),
                     'source': row.get('source', 'Unknown'),
-                    'prediction_time': prediction_time,
-                    'trade_time': trade_time,
+                    'prediction_time': prediction_time.strftime('%Y-%m-%d %H:%M:%S UTC'),
+                    'trade_time': trade_time.strftime('%Y-%m-%d %H:%M:%S UTC'),
                     'trade_date': trade_date,
                     'trade_price': trade_price,
-                    'future_price_time': future_price_time,
+                    'market_open': market_open.strftime('%Y-%m-%d %H:%M:%S UTC'),
+                    'market_close': market_close.strftime('%Y-%m-%d %H:%M:%S UTC'),
+                    'future_price_time': future_price_time.strftime('%Y-%m-%d %H:%M:%S UTC'),
                     'future_price_date': future_date,
                     'future_price': future_price,
                     'price_return': price_return
