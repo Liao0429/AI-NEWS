@@ -46,7 +46,8 @@ data/real/
 *.db
 
 # Results
-results/
+# 保留results目录中的文件
+!results/
 
 # Experiments
 experiments/results/
