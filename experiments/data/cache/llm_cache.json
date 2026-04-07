@@ -1,0 +1,1194 @@
+{
+  "017c088ddf6a675f807e12026aa9f806": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=5, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "08e3638e8ad7543cb7e2be3f33fc4b7c": {
+    "signal": -1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=2, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "43d7fb0ee3f4651d428c0477f5303356": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=4, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "71eaa611cd2856f4a21d105c9b684e9c": {
+    "signal": -1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=4",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "4e6511f052100910b3e888d5613b3e78": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "37154fa02fc852de97d80727198a1a81": {
+    "signal": -1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "7cfc81d08f2ca0bbb0a246f62acf4233": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=3, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "844cf50eacfa2f5d1e135c2a3e9e5b4f": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "0526f36bd65a6e280a4144aa397e99ff": {
+    "signal": 1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=1, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "8e1aad77c75746f377914d8deec7ff3f": {
+    "signal": -1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "45994fc8e4a9d9d1966cc6982993954a": {
+    "signal": 1,
+    "confidence": 1.0,
+    "reason": "Keyword fallback: pos=5, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "7947bbb95f89e977cce7f01e3e438375": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=5, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "41ab48b12a684faa4d5e486e4df53154": {
+    "signal": 1,
+    "confidence": 0.9,
+    "reason": "Keyword fallback: pos=9, neg=5",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "3e3bcd0b2d0020dd67e7e03c6a873c67": {
+    "signal": -1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=4",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "6d074d5c7934be530bef4b3ac73d09d6": {
+    "signal": -1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=5, neg=5",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "116696980930be8ac76406050d5d2c2c": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "df14cb8ffc8d4ff91d1878213e2105d1": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "be5bbc7e50b4f081eb49d5359ded256b": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "dd9cf940ce00d03c68a334e9799ee9a6": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=4, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "ce0044beaf62739dcb1323e6cff57b08": {
+    "signal": 1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=2, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "abb03c5c7d114746e7faa5702de9fd4b": {
+    "signal": -1,
+    "confidence": 0.9,
+    "reason": "Keyword fallback: pos=1, neg=5",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "678269a403f0d66bdea1ba6bc016bd15": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=4, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "d6e8c053f16792b77438407dbcd9c1cd": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "0c5d148d4ba543b99de74c75c98c4a42": {
+    "signal": 1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=1, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "59ab5f6db0fac54a4e9cb5654e54500a": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=7, neg=4",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "f05d9cee04313fbfebf52d0c2992737b": {
+    "signal": -1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "e1c2027c86706b53834d4ad65dedec42": {
+    "signal": -1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=5, neg=6",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "20ad0c9a50366c01c180c8b7ee216ac4": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "eca4e2661dc1ea5c79436190aae75c1a": {
+    "signal": -1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "4c449f7e59af86bdf384ea138f31f093": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=4, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "4bc3a61c5644f576dd468d778ee69783": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "1359aa5b569755ef621422058acb6390": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=3, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "954164d769c70c2cf378907f6bbfa2db": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "d1bbde7aa8605bc6f1453dece0499399": {
+    "signal": -1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=4",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "76cc41aa96fecc7fd4c0b462ae45e64e": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=3, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "d3ee6cdecdcfa265f771437a54a487ed": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "1e93eadb847135de81f3d23e177a5bf8": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "6a14993da0cc7a8697b5ab79ac67b7f6": {
+    "signal": -1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=3, neg=4",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "998d10581ee6ac68e4d8d24ef124d15a": {
+    "signal": 1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=2, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "a4fbffb52e42a0fd6211bf2a7c1842f4": {
+    "signal": -1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "a8b459cda7ad7791a335b5be486e6a3c": {
+    "signal": -1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=8, neg=11",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "83646252934097280f182297855656fa": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "37293430de97565b04aa7535e45e7ff0": {
+    "signal": -1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=1, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "56851617754217bcdf683b2cc5acbd47": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "32542b2c4fac395a03c837be99382bc5": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "f5ec8a16b0ee8412bbf2b5b78c380e2a": {
+    "signal": -1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=3, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "7300b75071a19cb27650b3fac7ef124c": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=3, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "dd16bc86eef39f3acdcda88b5e4e0487": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "7277c7ff5338057065a80b7b881cd357": {
+    "signal": -1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "63e9e4cf2e87fc953fbec102239a1d17": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "dc9aa6c72a4bb260bb92088dd69d41c8": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "1546dd7f84f9cf6056eecc2e5528a40d": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=5, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "5f61cdf22c4b84c7ef880f7eb6952ffc": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "5381992bd306e9f2702e792cc1918d59": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "af595bd66cb11c35e9d9b7fd80bcb76a": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=3, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "93debd50906af5e0b306c00b46790c44": {
+    "signal": -1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "0d1263fa756e21bb4848877af9b1b6db": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "6a88218dbc9249a99b145de94e48b729": {
+    "signal": 1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=1, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "71c3a39c3206587a914b0d313955679e": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "81c50016ae41c76a3b7ba3cfd361e298": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=4, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "a3d027aa623c66805bd0a1358cf72b3a": {
+    "signal": -1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=3, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "345c666ef60887e3129d0cf977a9f1c2": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "64e9b3b32c697c7209679c3778913e4e": {
+    "signal": -1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=1, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "4a44328b135c40145e19575f5ba3a1a9": {
+    "signal": 1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=2, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "7504e100557a5842bde9a4cde6a18170": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=3, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "5e24ba7261cbe7a3cd344d050cc94581": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=3, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "b04abb5c61863fc30e3a92f0cc8fb6d9": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=6, neg=5",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "006fea1f85e29956cf7d6fb91d990dff": {
+    "signal": 1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=3, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "4af01d9bd96c54f0ac44f08ef848e55d": {
+    "signal": 1,
+    "confidence": 1.0,
+    "reason": "Keyword fallback: pos=6, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "442fee38a2b2564d1e03727dd769fa03": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=4, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "7213c5d310b3ac145a92ac73bc5578f5": {
+    "signal": 1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=2, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "4bb064e4f674105224ae4b8531c0a80c": {
+    "signal": -1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=0, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "f2fe9fe087a9c65d731ba332c6b1e20f": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=3, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "836739f0a8a5dbbc65b1667c8d55208d": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "3ad5f7409ce5e75fbe7bea47000cfe72": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "e2aecda0ce93e6756ca78ff1b2c4178e": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=5, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "3f2d15d19660c44510de89ffdee131c8": {
+    "signal": -1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=2, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "14e48bb78969639d9a10f215aa3e2eb2": {
+    "signal": 1,
+    "confidence": 0.9,
+    "reason": "Keyword fallback: pos=7, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "f3cb6e3ad76a06bf7d7e2230491b36dd": {
+    "signal": -1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "a4162796890d7194fe92e6555ff255cf": {
+    "signal": 1,
+    "confidence": 0.9,
+    "reason": "Keyword fallback: pos=4, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "919084d555b56a1f8a1bb8670d788e2c": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "29a4380fb3610d6baee60eed92ec2c0a": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "771a6659763ef4f5aa37c81c58ec7f44": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "b19d550f4c1b709d3ac0c009513d90fb": {
+    "signal": -1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "561a16aa6e33accf1ad58b024f2872c8": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "6447a94189bdf9d5d0fc091d8e3be6ff": {
+    "signal": -1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=3, neg=6",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "3f60086d898cee5d64bd89ba8fc020d5": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=5, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "5669e121f43a2bb9512ff88f18d90a04": {
+    "signal": -1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "8ebb465975771866bb6bac36cfd2e43f": {
+    "signal": 1,
+    "confidence": 1.0,
+    "reason": "Keyword fallback: pos=6, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "291f3afdb47a5d1da75172174c7e08f9": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "bb0518f3e00dad4fb110b323a49a52e5": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "851232d1681e8b672ac797229571dc24": {
+    "signal": -1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=4, neg=4",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "caf49abd180985b4d0830c5a3f260842": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=4, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "71598ac817e91192174d19c6f94ba519": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=3, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "864f6db96fbc73aa286f4f04ab30bda4": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "79417c4edd4d6e68cb630f6d7bcb1c37": {
+    "signal": -1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=1, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "25d854933a5f9f4bbb411c450689715d": {
+    "signal": -1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "a400c7be6279f5205c860e6542582061": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "fe611b9139775532764dc78ca884073f": {
+    "signal": -1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=1, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "bf90817c27fa0d7bf9496c436d557af0": {
+    "signal": 1,
+    "confidence": 1.0,
+    "reason": "Keyword fallback: pos=10, neg=4",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "d55c79422e017b156ac4deb72a5f5fba": {
+    "signal": -1,
+    "confidence": 0.9,
+    "reason": "Keyword fallback: pos=1, neg=5",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "0569ef28a05240c57f9f884afcd289f8": {
+    "signal": 1,
+    "confidence": 1.0,
+    "reason": "Keyword fallback: pos=6, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "4186f08a06168eda8beda7e3db4f3e80": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "c48925980439ff8fcf1a5d2486467146": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=3, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "9e86aadd64979e08946fa9f3f5de1f1b": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=4, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "29365b9a67eb3e870e81b75008f82c09": {
+    "signal": -1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=1, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "5788cfd2eb13a31b29655821942a90b7": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "0c97ef88392713cc6bcda2590b425c83": {
+    "signal": 1,
+    "confidence": 1.0,
+    "reason": "Keyword fallback: pos=5, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "9165c5ae5e21b0c9ca77ca6cb85d748c": {
+    "signal": 1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=1, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "586b597a2e13e19211afa510faa5a743": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=3, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "5456853c023babe4b72f5c986ca91690": {
+    "signal": 1,
+    "confidence": 0.9,
+    "reason": "Keyword fallback: pos=4, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "394d0fbde5a671eb0747e6a6478b735f": {
+    "signal": -1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "435e11f2e06933effbd82c39b63138cb": {
+    "signal": 1,
+    "confidence": 0.9,
+    "reason": "Keyword fallback: pos=4, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "70e446aa0f60efb3600cda19cbc2107b": {
+    "signal": -1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=0, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "e832b4b8269b3ff6a82836f095ad8163": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=3, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "628f68dddcc48bffa31fffd303c87ed6": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=3, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "2361d50368026c2e481b106a7a360a7f": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=8, neg=5",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "0207064610b28ce7dd838dc4dc2f4ab2": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "df025efca4399c04a5eb9d1ee1a51d49": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "c351d020114c08a30065f3d0ac2e2458": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "c7cac47a1d4fcc9e3394a72b1b7f8f62": {
+    "signal": -1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=0, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "6f9f870faf4a55e0409c53eb700cacbb": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=4, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "e6b451e0333ea43a099760e7f9d1ad4f": {
+    "signal": 1,
+    "confidence": 1.0,
+    "reason": "Keyword fallback: pos=9, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "82862b264d203943673206299226a245": {
+    "signal": 1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=1, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "4027cc2df52757a564419f05583fa0f6": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "155b09cfc70ead3fb6df8199b8957336": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "061cb34c5f25bed546cb43f79827a4df": {
+    "signal": 1,
+    "confidence": 1.0,
+    "reason": "Keyword fallback: pos=8, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "62deb543938ec9f26453dcc49bdc9a9c": {
+    "signal": -1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=0, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "36d9a87ce1d7c9e8b1e144fd84208487": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "5bc7d97e9f78d1dbf1df4044417c0046": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=1, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "4334a369c00bffcd9907aa1df91c2abe": {
+    "signal": 1,
+    "confidence": 1.0,
+    "reason": "Keyword fallback: pos=6, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "592a320274e8b5a1db7b91753582c9c9": {
+    "signal": 1,
+    "confidence": 0.9,
+    "reason": "Keyword fallback: pos=5, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "794c72f22096cc4882556ae638b7d504": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "648caae87d2db9d8ff9a97e73cfe47fd": {
+    "signal": 1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=2, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "47a45d5136c717f21cf14949a9dcbd28": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=2, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "167cb739b9bfd77b0254e0b4e87524f0": {
+    "signal": 1,
+    "confidence": 1.0,
+    "reason": "Keyword fallback: pos=6, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "6271189577374854bae4566e3e1efc2e": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=3, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "72da375a0ab1262e3189fcbaa0b0f1db": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "0152b6e8a3e59b51a65d4e9ad7e8ba13": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=4, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "20b24c4189248b2b8b13ecc0e97ccab0": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=3, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "6408e68ebb0b7760a5adc2537f1519da": {
+    "signal": 1,
+    "confidence": 0.9,
+    "reason": "Keyword fallback: pos=6, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "d9b17d325add14131252d4760145114e": {
+    "signal": 1,
+    "confidence": 0.5,
+    "reason": "Keyword fallback: pos=6, neg=6",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "3579dfcfd0007b2b11fb8c952a18304f": {
+    "signal": 1,
+    "confidence": 0.8,
+    "reason": "Keyword fallback: pos=3, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "3817b32443a1d4bf83deab28774ee342": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=3, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "9dc62b0b64653a930ca2035c673c018d": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "a1c4d082234854e058fe1220947b556d": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=4, neg=2",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "4ee7e285ff92d1dc78bb7e88cdc5d1b2": {
+    "signal": 1,
+    "confidence": 0.7,
+    "reason": "Keyword fallback: pos=2, neg=0",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "163eff3f9a92b5df63c8804b039c8bb9": {
+    "signal": 1,
+    "confidence": 0.6,
+    "reason": "Keyword fallback: pos=4, neg=3",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  },
+  "5b28f827f6c4fbcc0e5e317201aa7a1c": {
+    "signal": 1,
+    "confidence": 0.9,
+    "reason": "Keyword fallback: pos=5, neg=1",
+    "method": "keyword_fallback",
+    "model_name": "kimi-k2",
+    "prompt_version": "PROMPT_V1"
+  }
+}
